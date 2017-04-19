@@ -11,27 +11,30 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var MessagesService;
+    var authorService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            MessagesService = (function () {
-                function MessagesService() {
+            authorService = (function () {
+                function authorService() {
                 }
-                MessagesService.prototype.getMessages = function () {
-                    return ['m1', 'm2', 'm3'];
+                authorService.prototype.getAuthors = function () {
+                    return ["Author1",
+                        "Author2",
+                        "Author3"
+                    ];
                 };
-                MessagesService = __decorate([
+                authorService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], MessagesService);
-                return MessagesService;
+                ], authorService);
+                return authorService;
             }());
-            exports_1("MessagesService", MessagesService);
+            exports_1("authorService", authorService);
         }
     }
 });
-//# sourceMappingURL=messages.service.js.map
+//# sourceMappingURL=authors.service.js.map

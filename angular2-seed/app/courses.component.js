@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.service', './attendance.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.service', './attendance.service'], f
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_service_1, attendance_service_1;
+    var core_1, course_service_1;
     var CoursesComponent;
     return {
         setters:[
@@ -19,9 +19,6 @@ System.register(['angular2/core', './course.service', './attendance.service'], f
             },
             function (course_service_1_1) {
                 course_service_1 = course_service_1_1;
-            },
-            function (attendance_service_1_1) {
-                attendance_service_1 = attendance_service_1_1;
             }],
         execute: function() {
             CoursesComponent = (function () {
@@ -31,10 +28,11 @@ System.register(['angular2/core', './course.service', './attendance.service'], f
                 }
                 ;
                 CoursesComponent = __decorate([
+                    // similar al usign de c#
                     core_1.Component({
                         selector: 'courses',
                         template: "\n    <h2>Courses</h2>\n    <h3>{{ title }}</h3>\n    <div class=\"dropdown\">\n    <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">Dropdown Example\n    <span class=\"caret\"></span></button>\n        <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li *ngFor=\"# course of courses\">\n                <a href=\"#\">{{ course.course }}-{{ course.teacher }}</a> \n            </li>\n        </ul>\n    </div>\n    ",
-                        providers: [course_service_1.CourseService, attendance_service_1.attendanceService]
+                        providers: [course_service_1.CourseService]
                     }), 
                     __metadata('design:paramtypes', [course_service_1.CourseService])
                 ], CoursesComponent);

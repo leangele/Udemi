@@ -1,9 +1,27 @@
 import {Component} from 'angular2/core';
-import {CoursesComponent} from './courses.component';
-import {MessagesComponent} from './messages.components';
+
+
 @Component({
     selector: 'my-app',
-    template: '<messages></messages>',
-    directives:[CoursesComponent]
+    template: `<h1>my list of Couses</h1>
+    <div [hidden]="courses.length == 0" >
+        ListCourses      
+    </div>
+    <div [hidden]="courses.length >0">
+    you dont have courses
+    </div>
+    <ul class="nav nav-pills">
+        <li>
+            <a>Map view</a>
+        </li>
+        <li>
+            <a>List view</a>
+        </li>
+    </ul>
+`,
+
 })
-export class AppComponent { }
+export class AppComponent {
+    courses=[];
+    viewMode='map'
+ }

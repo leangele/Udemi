@@ -11,27 +11,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var MessagesComponent;
+    var AuthorsComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            MessagesComponent = (function () {
-                function MessagesComponent() {
+            // import { AuthorService } from './authors.service';
+            AuthorsComponent = (function () {
+                function AuthorsComponent(authorService) {
+                    this.Authors = authorService.GetAuthors();
                 }
-                MessagesComponent = __decorate([
+                AuthorsComponent = __decorate([
                     core_1.Component({
-                        selector: 'messages',
-                        template: "<h1>Messages</h1>\n    "
+                        selector: 'authors',
+                        template: " \n    <h1>Authors</h1>\n    {{title}}\n    <ul>\n    Authors: string[];\n        <li *ngFor=\"#author of Authors\">\n            {{author}}\n        </li>\n    </ul>\n    "
                     }), 
-                    __metadata('design:paramtypes', [])
-                ], MessagesComponent);
-                return MessagesComponent;
+                    __metadata('design:paramtypes', [Object])
+                ], AuthorsComponent);
+                return AuthorsComponent;
             }());
-            exports_1("MessagesComponent", MessagesComponent);
+            exports_1("AuthorsComponent", AuthorsComponent);
         }
     }
 });
-//# sourceMappingURL=messages.components.js.map
+//# sourceMappingURL=authors.component.js.map

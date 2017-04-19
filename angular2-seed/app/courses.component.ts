@@ -1,6 +1,5 @@
 import {Component} from 'angular2/core'; // similar a el using de c#
 import {CourseService} from './course.service'  // similar al usign de c#
-import {attendanceService} from './attendance.service'
 @Component({
    selector :'courses',
    template:`
@@ -16,17 +15,12 @@ import {attendanceService} from './attendance.service'
         </ul>
     </div>
     `,
-   providers:[CourseService,attendanceService]
+   providers:[CourseService]
 })// esto es una funcion similar a un metodo de c# esta fuera de la clase
    export class CoursesComponent{
        title = "the title of the courses page"; //es similar a propiedades en c#
        courses;
-       attendances;
-
        constructor (courseService: CourseService){
            this.courses=courseService.getCourses(); 
        };
-    //    constructor (attendanceService: attendanceService){
-    //        this.attendances=attendanceService.getAttendances();
-    //    };
    }

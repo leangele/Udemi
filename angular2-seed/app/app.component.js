@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,25 +10,23 @@ System.register(['angular2/core', './courses.component'], function(exports_1, co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1;
+    var core_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (courses_component_1_1) {
-                courses_component_1 = courses_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.courses = [];
+                    this.viewMode = 'map';
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<messages></messages>',
-                        directives: [courses_component_1.CoursesComponent]
+                        template: "<h1>my list of Couses</h1>\n    <div [hidden]=\"courses.length == 0\" >\n        ListCourses      \n    </div>\n    <div [hidden]=\"courses.length >0\">\n    you dont have courses\n    </div>\n    <ul class=\"nav nav-pills\">\n        <li>\n            <a>Map view</a>\n        </li>\n        <li>\n            <a>List view</a>\n        </li>\n    </ul>\n",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
